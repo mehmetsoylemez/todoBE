@@ -5,8 +5,8 @@ Executing the commands below under project root directory should be sufficient t
 
 ## Remaining issues
 
-Logging Infrastructure
-More robust error handling
+1) Logging Infrastructure
+2) More robust error handling
 
 ## Feedback
 
