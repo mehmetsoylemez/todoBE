@@ -1,0 +1,31 @@
+version: "1"
+services:
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    ports:
+      - '5432:5432'
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: "./"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "msoylemez@soylemez.com"
+      PGADMIN_DEFAULT_PASSWORD: "password"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
+
