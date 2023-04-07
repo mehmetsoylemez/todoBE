@@ -3,6 +3,10 @@
 
 Executing the commands below under project root directory should be sufficient to launch the BE environment.
 
+## Remaining issues
+
+Logging Infrastructure
+More robust error handling
 
 ## Feedback
 
